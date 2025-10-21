@@ -61,7 +61,7 @@ class InternetSpeedBot:
             'time' : start_time.strftime("%H:%M:%S"),
             'result_id' : elem_result_id.text,
             'ip_addr' : elem_ip_addr.text,
-            'mode' : mode.group(0),
+            'mode' : mode.group(1),
             'download' : elem_label_download.text,
             'upload' : elem_label_upload.text,
             'ping' : elem_label_ping_in_ms.text,

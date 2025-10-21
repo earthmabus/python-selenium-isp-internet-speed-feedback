@@ -9,9 +9,13 @@ CHROME_DRIVER_PATH = "/home/michael/PycharmProjects/chromedriver"
 TWITTER_EMAIL = os.environ.get("TWITTER_EMAIL")
 TWITTER_PASSWORD = os.environ.get("TWITTER_PASSWORD")
 
+# create a bot that can run speed tests
 speedbot = InternetSpeedBot()
 speedbot.start()
+
+# create a class to store results
 results_storage = SpeedTestResultsStorage()
+#results_storage.get_all_results()
 
 while True:
     # conduct a speed test
