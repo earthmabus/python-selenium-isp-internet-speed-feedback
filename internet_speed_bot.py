@@ -1,8 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
-from selenium.webdriver.support import expected_conditions as EC
 import time
 import datetime as dt
 import re
@@ -62,11 +60,11 @@ class InternetSpeedBot:
             'result_id' : elem_result_id.text,
             'ip_addr' : elem_ip_addr.text,
             'mode' : mode.group(1),
-            'download' : elem_label_download.text,
-            'upload' : elem_label_upload.text,
-            'ping' : elem_label_ping_in_ms.text,
-            'latency_up' : elem_label_latency_up.text,
-            'latency_down' : elem_label_latency_down.text
+            'download' : float(elem_label_download.text),
+            'upload' : float(elem_label_upload.text),
+            'ping' : int(elem_label_ping_in_ms.text),
+            'latency_up' : int(elem_label_latency_up.text),
+            'latency_down' : int(elem_label_latency_down.text)
         }
 
     def shutdown(self):
