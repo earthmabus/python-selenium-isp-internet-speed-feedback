@@ -19,11 +19,10 @@ class InternetSpeedBot:
 
     def get_internet_speed(self):
         '''Executes an internet speed test to track download and upload performance'''
-        time.sleep(2)
-
-        start_time = dt.datetime.now()
+        time.sleep(5)
 
         # start the speed test
+        start_time = dt.datetime.now()
         elem_go_btn = self.m_driver.find_element(By.CLASS_NAME, "start-text")
         elem_go_btn.click()
 
@@ -33,10 +32,12 @@ class InternetSpeedBot:
         # if the close "Try Speedtest for Desktop" dialog box is present, close it out
         try:
             print("checking if dialog box is present")
-            elem_dialog_close_btn = self.m_driver.find_element(By.ID, "close-btn")
+            elem_dialog_close_btn = self.m_driver.find_element(By.CSS_SELECTOR, '[title="Dismiss"]')
             if elem_dialog_close_btn.is_displayed():
                 print("dialog box is present, closing")
                 elem_dialog_close_btn.click()
+            else:
+                print("did not detect dialog box...")
         except NoSuchElementException:
             print("dialog box not detected")
 

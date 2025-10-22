@@ -77,13 +77,13 @@ print("Starting speed test bot...")
 while True:
     # conduct a speed test
     result = speedbot.get_internet_speed()
-
-    # print the results
     print(result)
 
     # store the results
     results_storage.store_results(result)
+    print("Stored to data source")
 
+    # create a social media post is everything is great
     if sm is not None and result['download'] > PROMISED_DOWN and result['upload'] > PROMISED_UP:
         # post that we're having a great internet experience
         message = "I'm having excellent results with my internet connection right now.\n"
