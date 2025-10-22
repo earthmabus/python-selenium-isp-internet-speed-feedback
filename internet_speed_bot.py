@@ -49,6 +49,7 @@ class InternetSpeedBot:
         elem_connection_mode = self.m_driver.find_element(By.CLASS_NAME, 'result-item-connection-mode')
         elem_ip_addr = self.m_driver.find_element(By.CLASS_NAME, 'js-data-ip')
         elem_result_id = self.m_driver.find_element(By.CSS_SELECTOR, '[data-result-id]')
+        elem_data_sponsor = self.m_driver.find_element(By.CLASS_NAME, "js-data-sponsor")
 
         mode = re.search(r'Connections\s+(\S+)', elem_connection_mode.text)
         if not mode:
@@ -64,7 +65,8 @@ class InternetSpeedBot:
             'upload' : float(elem_label_upload.text),
             'ping' : int(elem_label_ping_in_ms.text),
             'latency_up' : int(elem_label_latency_up.text),
-            'latency_down' : int(elem_label_latency_down.text)
+            'latency_down' : int(elem_label_latency_down.text),
+            'sponsor' : elem_data_sponsor.text
         }
 
     def shutdown(self):

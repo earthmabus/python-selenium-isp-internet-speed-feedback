@@ -22,7 +22,8 @@ class SpeedTestResultsStorage:
                 'upload (mbps)' : results['upload'],
                 'ping (ms)' : results['ping'],
                 'latencyUp (ms)' : results['latency_up'],
-                'latencyDown (ms)' : results['latency_down']
+                'latencyDown (ms)' : results['latency_down'],
+                'sponsor': results['sponsor']
             }
         }
 
