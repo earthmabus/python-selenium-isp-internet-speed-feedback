@@ -5,3 +5,9 @@ This application is designed to monitor the upload and download speeds of the ma
 The application works by
 * Communicating with X.com via its API (go to https://developer.x.com)
 * Gathering network performance using https://www.speedtest.net via selenium automation
+* Storing results into a google sheet
+
+Ugprade Ideas
+* Store results into a real data source that would allow for analytics
+* Post graphs of network performance instead of just tweets of momentary results
+* Run analytics
