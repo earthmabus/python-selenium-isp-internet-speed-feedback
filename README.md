@@ -7,7 +7,7 @@ The application works by
 * Gathering network performance using https://www.speedtest.net via selenium automation
 * Storing results into a google sheet
 
-Ugprade Ideas
+Upgrade Ideas
 * Store results into a real data source that would allow for analytics
 * Post graphs of network performance instead of just tweets of momentary results
 * Run analytics
